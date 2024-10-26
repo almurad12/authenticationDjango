@@ -3,11 +3,11 @@ from rest_framework import generics
 from .models import MyDetails
 from .serializers import MyDetailsSerializers
 from rest_framework.permissions import IsAuthenticated
-from rest_framework.authentication import BaseAuthentication
+from rest_framework.authentication import BasicAuthentication
 # Create your views here.
 
 class MydetailsList(generics.ListCreateAPIView):
     queryset = MyDetails.objects.all()
     serializer_class = MyDetailsSerializers
-    authentication_classes =[BaseAuthentication]
+    authentication_classes =[BasicAuthentication]
     permission_classes = [IsAuthenticated]

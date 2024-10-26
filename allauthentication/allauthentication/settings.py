@@ -123,15 +123,11 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-REST_FRAMEWORK = {
-     'DEFAULT_PERMISSION_CLASSES': (
-         'rest_framework.permissions.IsAuthenticated',
-     ),
-    #  'DEFAULT_AUTHENTICATION_CLASSES': (
-    #      'rest_framework.authentication.SessionAuthentication',
-    #      'rest_framework.authentication.BasicAuthentication',
-    #      'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
-    #  ),
-    #  'DEFAULT_FILTER_BACKENDS': ('rest_framework.filters.BaseFilterBackend',),
-    #  'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-  }
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': [
+#         'rest_framework.authentication.BasicAuthentication',
+#     ],
+#     'DEFAULT_PERMISSION_CLASSES': [
+#         'rest_framework.permissions.IsAuthenticated',  # Require authentication
+#     ],
+# }
