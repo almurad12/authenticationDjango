@@ -38,8 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework.authtoken',
     'basicAuthenticationSystem',
     'sessionAuthentication',
+    'tokenauthentication',
 ]
 
 MIDDLEWARE = [
@@ -132,3 +134,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #         'rest_framework.permissions.IsAuthenticated',  # Require authentication
 #     ],
 # }
+
+
