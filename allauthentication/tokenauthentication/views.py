@@ -13,23 +13,22 @@ from rest_framework.decorators import api_view
 from rest_framework import status
 from django.contrib.auth.models import User
 # Create your views here.
-
 @api_view(['POST'])
 def register(request):
     if request.method == 'POST':
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
             user = serializer.save()
+            ##user er token create kora
             token = Token.objects.create(user=user)
+            ##json
             return Response({'token': token.key}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-
+    
 @api_view(['POST'])
 def login(request):
     username = request.data.get('username')
     password = request.data.get('password')
-    
     try:
         user = User.objects.get(username=username)
     except User.DoesNotExist:

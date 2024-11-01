@@ -20,7 +20,9 @@ from django.urls import path,include
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('basicauthentication/',include('basicAuthenticationSystem.urls')),
-    # path('sessionAuthentication/',include('sessionAuthentication.urls')),
-    # path('api-auth/', include('rest_framework.urls')),
+    path('sessionAuthentication/',include('sessionAuthentication.urls')),
+    path('api-auth/', include('rest_framework.urls')),
     path('tokenAuthentication/',include('tokenauthentication.urls')),
+    path('jwtAuthenticationsystem/',include('jwtAuthentication.urls'))
+    
 ]
